@@ -7,7 +7,7 @@ close all
 %% parameters
 nSensors = 5;
 nSeconds = 600; % 600 seconds of data
-nSubj = 2; % number of subjects to simulate
+% nSubj = 2; % number of subjects to simulate
 samplerate = 1000; % 1000 time points per second
 nSamples = nSeconds*samplerate;
 swr_template_p = 'SWRtemplate.mat';
@@ -15,10 +15,10 @@ n_SWR_Events  = 500; % number of SWR events injecting to simulated data
 n_HFB_Events  = 500; % number of high frequency band events injecting to simulated data
 swrfilter.lowedge  = 70; % hz,  
 swrfilter.highedge = 180; % hz
-swr_noise.weight_of_voltage  = 1 ;  % [0 n]
-swr_noise.backgroudnoise = 3 ;
-hfb_noise.weight_of_voltage = 0.5;
-hfb_noise.backgroudnoise = 1;
+swr_noise.weight_of_voltage  = 1 ;  % control voltage of swr
+swr_noise.backgroudnoise = 3 ;      % control voltage of signal
+hfb_noise.weight_of_voltage = 0.5;  % control voltage of hfb
+hfb_noise.backgroudnoise = 1;       % control voltage of signal
 hfbfilter = swrfilter; % frequency range of hfb, same as swr
 
 %% load template SWR
